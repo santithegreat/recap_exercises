@@ -1,3 +1,4 @@
+import random
 print("This program asks for a number and tests if it is prime")
 while True:
     try:
@@ -8,9 +9,23 @@ while True:
         continue
     break
 for i in range (2, num // 2):
+    prime = True
     if num % i == 0:
         print("The number", num, "is not prime")
-        exit()
-print("The number", num, "is prime")
+        prime = False
+        break
 
+if prime==True:
+    print("The number", num, "is prime")
+
+i=0
+while i < 100:
+    rand = int(random.random()*100)
+    prime = True
+    i+=1
+    for f in range(2, rand // 2):
+        if rand % f == 0:
+            prime = False
+    if prime==True:
+        print(rand)
 # generate 100 numbers, print only the prime ones
